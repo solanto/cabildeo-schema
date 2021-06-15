@@ -51,7 +51,7 @@
                 "type": "boolean"
             },
             "votacion": {
-                "desctiption": "Cómo votó el congreso en la iniciativa",
+                "description": "Cómo votó el congreso en la iniciativa",
                 "type": "object",
                 "properties": {
                     "aFavor": {
