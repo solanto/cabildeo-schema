@@ -1,0 +1,19 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/product.schema.json",
+    "title": "Nombre",
+    "description": "El nombre completo de un representante",
+    "type": "object",
+    "properties": {
+        "nombre": {
+            "type": "string"
+        },
+        "apellidos": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "nombre",
+        "apellidos"
+    ]
+}

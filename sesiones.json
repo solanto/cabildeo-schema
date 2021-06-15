@@ -1,0 +1,46 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/product.schema.json",
+    "title": "Sesiones",
+    "description": "Las sesiones congresionales",
+    "type": "array",
+    "items": {
+        "title": "Sesión",
+        "description": "Una sesión congresional",
+        "type": "object",
+        "properties": {
+            "fecha": {
+                "description": "La fecha en la cual se realizó la sesión",
+                "type": "string",
+                "format": "date"
+            },
+            "transcripcion": {
+                "description": "Un enlace a la transcripción textual de la sesión",
+                "type": "string",
+                "format": "uri"
+            },
+            "video": {
+                "description": "Un enlace al video de la sesión",
+                "type": "string",
+                "format": "uri"
+            },
+            "iniciativas": {
+                "description": "Una lista de los expedientes de las iniciativas discutidas en la sesión",
+                "type": "array",
+                "items": {
+                    "$ref": "expediente.json#"
+                }
+            },
+            "asistencias": {
+                "description": "Una lista de los nombres de los diputados que asistieron la sesión",
+                "type": "array",
+                "items": {
+                    "$ref": "nombre.json#"
+                }
+            }
+        }
+    },
+    "required": [
+        "fecha"
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/product.schema.json",
+    "title": "Expediente",
+    "description": "El idenficador del documento en el cual se describe una iniciativa legislativa",
+    "type": "object",
+    "properties": {
+        "documento": {
+            "type": "integer"
+        },
+        "congreso": {
+            "type": "integer"
+        }
+    },
+    "required": [
+        "documento",
+        "congreso"
+    ]
+}

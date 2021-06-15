@@ -1,0 +1,105 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/product.schema.json",
+    "title": "Iniciativas",
+    "description": "Las iniciativas legislativas en las cuales trabajan los diputados congresionales",
+    "type": "array",
+    "items": {
+        "title": "Iniciativa",
+        "description": "Una iniciativa legislativa",
+        "type": "object",
+        "properties": {
+            "expediente": {
+                "description": "El idenficador del documento en el cual se describe la iniciativa",
+                "$ref": "expediente.json#"
+            },
+            "iniciante": {
+                "description": "El nombre del representante que inició la iniciativa",
+                "$ref": "nombre.json#"
+            },
+            "fecha": {
+                "description": "Las fechas en las cuales la iniciativa era iniciada y radicada",
+                "type": "object",
+                "properties": {
+                    "iniciada": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "radicada": {
+                        "type": "string",
+                        "format": "date"
+                    }
+                }
+            },
+            "temas": {
+                "description": "Una lista de etiquetas de temas generales relacionados a la iniciativa",
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "asunto": {
+                "description": "El asunto oficial de la iniciativa",
+                "type": "string"
+            },
+            "asuntoSimple": {
+                "description": "Un resumen extraoficial del asunto de la iniciativa",
+                "type": "string"
+            },
+            "resuleta": {
+                "description": "Si la iniciativa está resuelta",
+                "type": "boolean"
+            },
+            "votacion": {
+                "desctiption": "Cómo votó el congreso en la iniciativa",
+                "type": "object",
+                "properties": {
+                    "aFavor": {
+                        "type": "integer"
+                    },
+                    "enContra": {
+                        "type": "integer"
+                    },
+                    "abstenido": {
+                        "type": "integer"
+                    },
+                    "ausente": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "sesiones": {
+                "description": "Las fechas de las sesiones en las cuales se discutó la iniciativa",
+                "type": "array",
+                "items": {
+                    "type": "string",
+                    "format": "date"
+                }
+            },
+            "comisiones": {
+                "description": "Los nombres de las comisiones parlimentarias relacionadas a la iniciativa",
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "required": [
+        "expediente",
+        "iniciante",
+        "fechaIniciada",
+        "asunto",
+        "resuelta",
+        "fecha",
+        "comisiones"
+    ],
+    "if": {
+        "properties": {
+            "resuelta": true
+        }
+    },
+    "then": {
+        "required": ["votacion"]
+    }
+}

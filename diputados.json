@@ -1,0 +1,64 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/product.schema.json",
+    "title": "Diputados",
+    "description": "Los representantes del congreso",
+    "type": "array",
+    "items": {
+        "title": "Diputado",
+        "description": "Un representante en el congreso",
+        "type": "object",
+        "properties": {
+            "nombre": {
+                "description": "El nombre del diputado",
+                "$ref": "nombre.json#"
+            },
+            "telefono": {
+                "description": "El número telefónico del diputado",
+                "type": "string"
+            },
+            "foto": {
+                "description": "Un enlace a una foto del diputado",
+                "type": "string",
+                "format": "uri"
+            },
+            "distrito": {
+                "description": "El nombre del distrito congresional que representa el diputado",
+                "type": "string"
+            },
+            "partido": {
+                "description": "El nombre del partido del diputado",
+                "type": "string"
+            },
+            "semblanzaCurricular": {
+                "description": "Una descripción de la experienca profesional del diputado",
+                "type": "string"
+            },
+            "comisiones": {
+                "description": "Los nombres de las comisiones parlimentarias con las cuales trabaja el diputado",
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "iniciativas": {
+                "description": "Los expedientes de las iniciativas legislativas en las cuales trabaja el diputado",
+                "type": "array",
+                "items": {
+                    "$ref": "expediente.json#"
+                }
+            },
+            "suplente": {
+                "description": "El nombre del suplente del diputado",
+                "$ref": "nombre.json#"
+            }
+        }
+    },
+    "required": [
+        "nombre",
+        "telefono",
+        "distrito",
+        "partido",
+        "comisiones"
+    ]
+}
