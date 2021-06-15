@@ -83,6 +83,16 @@
                     "type": "string"
                 }
             }
+        },
+        "if": {
+            "properties": {
+                "resuelta": true
+            }
+        },
+        "then": {
+            "required": [
+                "votacion"
+            ]
         }
     },
     "required": [
@@ -93,13 +103,5 @@
         "resuelta",
         "fecha",
         "comisiones"
-    ],
-    "if": {
-        "properties": {
-            "resuelta": true
-        }
-    },
-    "then": {
-        "required": ["votacion"]
-    }
+    ]
 }
