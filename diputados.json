@@ -13,10 +13,6 @@
                 "description": "El nombre del diputado",
                 "$ref": "nombre.json#"
             },
-            "telefono": {
-                "description": "El número telefónico del diputado",
-                "type": "string"
-            },
             "foto": {
                 "description": "Un enlace a una foto del diputado",
                 "type": "string",
@@ -51,12 +47,41 @@
             "suplente": {
                 "description": "El nombre del suplente del diputado",
                 "$ref": "nombre.json#"
+            },
+            "contacto": {
+                "description": "Cómo se puede contactar el diputado (número de teléfono, correo electrónico, nombre de usuario en Twitter, etc.); se pueden adicionar más puntos de contacto aún no especificados",
+                "type": "object",
+                "properties": {
+                    "telefono": {
+                        "type": "string"
+                    },
+                    "correoElectronico": {
+                        "type": "string",
+                        "format": "idn-email"
+                    },
+                    "twitter": {
+                        "description": "El nombre de usuario del diputado en Twitter",
+                        "type": "string"
+                    },
+                    "facebook": {
+                        "description": "El nombre de usuario del diputado en Facebook",
+                        "type": "string"
+                    },
+                    "instagram": {
+                        "description": "El nombre de usuario del diputado en Instagram",
+                        "type": "string"
+                    }
+                },
+                "additionalProperties": {
+                    "type": "string"
+                }
             }
         }
     },
     "required": [
         "nombre",
         "telefono",
+        "correoElectonico",
         "distrito",
         "partido",
         "comisiones"
