@@ -56,19 +56,20 @@
                         "type": "string"
                     },
                     "correoElectronico": {
+                        "description": "El correo electrónico del diputado",
                         "type": "string",
                         "format": "idn-email"
                     },
                     "twitter": {
-                        "description": "El nombre de usuario del diputado en Twitter",
+                        "description": "El nombre de usuario en Twitter del diputado",
                         "type": "string"
                     },
                     "facebook": {
-                        "description": "El nombre de usuario del diputado en Facebook",
+                        "description": "El nombre de usuario en Facebook del diputado",
                         "type": "string"
                     },
                     "instagram": {
-                        "description": "El nombre de usuario del diputado en Instagram",
+                        "description": "El nombre de usuario en Instagram del diputado",
                         "type": "string"
                     }
                 },
