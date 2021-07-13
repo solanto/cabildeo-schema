@@ -53,7 +53,9 @@
                 "type": "object",
                 "properties": {
                     "telefono": {
-                        "type": "string"
+                        "description": "El número de teléfono del diputado, en el formato 'tel:+52[número]' o 'tel:+52[número];ext=[extensión]' de RFC 3966 (https://rfc-editor.org/rfc/rfc3966)",
+                        "type": "string",
+                        "pattern": "^tel:((?:\\+[\\d().-]*\\d[\\d().-]*|[0-9A-F*#().-]*[0-9A-F*#][0-9A-F*#().-]*(?:;[a-z\\d-]+(?:=(?:[a-z\\d\\[\\]\\\/:&+$_!~*'().-]|%[\\dA-F]{2})+)?)*;phone-context=(?:\\+[\\d().-]*\\d[\\d().-]*|(?:[a-z0-9]\\.|[a-z0-9][a-z0-9-]*[a-z0-9]\\.)*(?:[a-z]|[a-z][a-z0-9-]*[a-z0-9])))(?:;[a-z\\d-]+(?:=(?:[a-z\\d\\[\\]\\\/:&+$_!~*'().-]|%[\\dA-F]{2})+)?)*(?:,(?:\\+[\\d().-]*\\d[\\d().-]*|[0-9A-F*#().-]*[0-9A-F*#][0-9A-F*#().-]*(?:;[a-z\\d-]+(?:=(?:[a-z\\d\\[\\]\\\/:&+$_!~*'().-]|%[\\dA-F]{2})+)?)*;phone-context=\\+[\\d().-]*\\d[\\d().-]*)(?:;[a-z\\d-]+(?:=(?:[a-z\\d\\[\\]\\\/:&+$_!~*'().-]|%[\\dA-F]{2})+)?)*)*)$"
                     },
                     "correoElectronico": {
                         "description": "El correo electrónico del diputado",
