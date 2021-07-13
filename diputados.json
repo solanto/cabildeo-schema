@@ -49,7 +49,7 @@
                 "$ref": "nombre.json#"
             },
             "contacto": {
-                "description": "Cómo se puede contactar el diputado (número de teléfono, correo electrónico, nombre de usuario en Twitter, etc.); se pueden adicionar más puntos de contacto aún no especificados",
+                "description": "Cómo se puede contactar el diputado (teléfono, correo electrónico, redes sociales, etc.); se pueden adicionar más puntos de contacto aún no especificados",
                 "type": "object",
                 "properties": {
                     "telefono": {
