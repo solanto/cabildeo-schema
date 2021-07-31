@@ -70,7 +70,8 @@
             },
             "mayoriaEspecial": {
                 "description": "La proporción de los votos que se necesita (menos un voto para hacer la mayoría) para aprobar la iniciativa si no es 1/2 (mayoría simple/'absoluta'); ejemplos de valores permitidos son '2/3', '1/4' y '1'",
-                "type": "string"
+                "type": "string",
+                "pattern": "^\\d+(?:\/\\d+)?$"
             },
             "sesiones": {
                 "description": "Las fechas de las sesiones en las cuales se discutó la iniciativa",
