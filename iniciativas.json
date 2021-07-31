@@ -55,16 +55,32 @@
                 "type": "object",
                 "properties": {
                     "aFavor": {
-                        "type": "integer"
+                        "description": "Una lista de los nombres de los diputados que votaron a favor de la iniciativa",
+                        "type": "array",
+                        "items": {
+                            "$ref": "nombre.json#"
+                        }
                     },
                     "enContra": {
-                        "type": "integer"
+                        "description": "Una lista de los nombres de los diputados que votaron en contra de la iniciativa",
+                        "type": "array",
+                        "items": {
+                            "$ref": "nombre.json#"
+                        }
                     },
                     "abstenido": {
-                        "type": "integer"
+                        "description": "Una lista de los nombres de los diputados que se abstuvieron de votar en la iniciativa",
+                        "type": "array",
+                        "items": {
+                            "$ref": "nombre.json#"
+                        }
                     },
                     "ausente": {
-                        "type": "integer"
+                        "description": "Una lista de los nombres de los diputados que no asistieron al voto de la iniciativa",
+                        "type": "array",
+                        "items": {
+                            "$ref": "nombre.json#"
+                        }
                     }
                 }
             },
